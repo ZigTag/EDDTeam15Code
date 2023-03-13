@@ -1,5 +1,7 @@
-#include<Arduino.h>
+#include <Arduino.h>
 #include <Servo.h>
+
+#include "utils.h"
 
 const int button1Pin = 2;
 const int button2Pin = 3;
@@ -8,8 +10,6 @@ int button2State = 0;
 
 const int leftMotorPin = 9;
 Servo leftMotor;
-
-void motorControl(Servo motor, int value);
 
 void setup() {
   Serial.begin(9600);
@@ -39,6 +39,3 @@ void loop() {
   delay(50);
 }
 
-void motorControl(Servo motor, int value) {
-  motor.write(map(value, -255, 255, 1000, 2000));
-}
