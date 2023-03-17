@@ -16,6 +16,7 @@ void setup() {
   Serial.println("Started Serial Port");
 
   pinMode(button1Pin, INPUT);
+  pinMode(button2Pin, INPUT);
 
   pinMode (leftMotorPin, OUTPUT);
   leftMotor.attach(leftMotorPin);
@@ -29,9 +30,11 @@ void loop() {
   // Serial.println(buttonState);
 
   if (button1State == HIGH) {
+    // Open
     motorControl(leftMotor, 100);  
   } else if (button2State == HIGH) {
-    motorControl(leftMotor, -100);
+    // Close
+    motorControl(leftMotor, -60);
   } else {
     motorControl(leftMotor, 0);
   }
