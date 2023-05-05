@@ -1,3 +1,7 @@
-#include <Servo.h>
+struct Motor {
+  int inputPin1;
+  int inputPin2;
+  int speedPin;
+};
 
-void motorControl(Servo motor, int value);
+void motorControl(Motor motor, int speed);
